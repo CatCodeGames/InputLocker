@@ -1,10 +1,12 @@
 ﻿using CatCode.InteractionLocking;
-using CatCode.Pools;
 using System;
+using System.Text;
 using UnityEngine;
 
 public class InteractionLocker : MonoBehaviour
 {
+    private StringBuilder _sb = new StringBuilder();
+
     private IInteractionLockerService _service;
     [SerializeField, TextArea] private string _info;
 
@@ -43,8 +45,7 @@ public class InteractionLocker : MonoBehaviour
 
     private void OnLockDataChanged(InteractionLockData lockData)
     {
-        using var handle = StringBuilderPool.Get(out var sb);
-
+        _sb.Clear();
         var interactionMask = (int)lockData.InteractionMask;
         for (int i = 0; i < 32; i++)
         {
@@ -52,12 +53,12 @@ public class InteractionLocker : MonoBehaviour
             if ((interactionMask & bitMask) != 0)
             {
                 if (TryGetLayerName(i, out var name))
-                    sb.Append(name).AppendLine();
+                    _sb.Append(name).AppendLine();
                 else
-                    sb.Append("Bit index - ").Append(i).AppendLine();
+                    _sb.Append("Bit index - ").Append(i).AppendLine();
             }
         }
-        _info = sb.ToString();
+        _info = _sb.ToString();
     }
 
     private bool TryGetLayerName(int bitIndex, out string name)

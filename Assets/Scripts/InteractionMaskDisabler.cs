@@ -22,6 +22,6 @@ public sealed class InteractionMaskDisabler : MonoBehaviour
     private void OnLockDataChanged(InteractionLockData lockData)
     {
         var inputBlocked = (lockData.InteractionMask & _layer.InteractionMask) == _layer.InteractionMask;
-        _locker.enabled = !inputBlocked;
+        _targetComponent.enabled = !inputBlocked;
     }
 }
