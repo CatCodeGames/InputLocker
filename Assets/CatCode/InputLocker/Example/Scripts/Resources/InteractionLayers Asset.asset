@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6533866401149107919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c61b7e413498c4cae4dabdca8e7a7f, type: 3}
+  m_Name: UI Layer
+  m_EditorClassIdentifier: Assembly-CSharp::CatCode.Lockers.InteractionLayerAsset
+  _bitIndex: 5
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 32
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9ab9df759d874499de12a663814105, type: 3}
+  m_Name: InteractionLayers Asset
+  m_EditorClassIdentifier: Assembly-CSharp::CatCode.Lockers.InteractionLayersAsset
+  _layers:
+  - {fileID: 2689323411232191350}
+  - {fileID: -6533866401149107919}
+--- !u!114 &2689323411232191350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c61b7e413498c4cae4dabdca8e7a7f, type: 3}
+  m_Name: Game Layer
+  m_EditorClassIdentifier: Assembly-CSharp::CatCode.Lockers.InteractionLayerAsset
+  _bitIndex: 0
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1
