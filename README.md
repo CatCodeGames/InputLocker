@@ -78,23 +78,18 @@ public void InitializeLocker()
 ```
 
 ### Accessing the service
-
 Once created, the service can be accessed in any way that fits your architecture:  
 via dependency injection, as a singleton, or through a service locator.<br>
-The repository also includes a static facade, **`InteractionLocker`**, which provides convenient global access when needed.
-
 
 ### Locking and unlocking layers
-
 A layer is locked by calling `Lock` and passing either a single layer or a set of layers.  
 The method returns an `InteractionLockHandle`. Releasing this handle (via `Dispose`) removes the lock.<br><br>
-
 `InteractionLockHandle` is safe to copy — every copy remains valid and always reflects the current state.  
 It’s implemented as a struct with zero allocations, so using it does not generate garbage.
 
 
 # 3. Usage
-
+The repository includes a demonstration scene called **SampleScene** and several scripts showcasing how the service works.
 ### Basic example
 
 ```csharp
@@ -252,7 +247,6 @@ public void InitializeLocker()
 ```
 ### Доступ к сервису
 После создания к сервису можно получать доступ любым удобным способом: через DI, как к синглтону или через сервис‑локатор.<br>
-В репозитории для этого уже есть статический фасад `InteractionLocker`, который даёт простой доступ к сервису из любого места проекта.
 
 ### Блокировка/отключение слоёв
 Блокировка слоя выполняется через вызов метода `Lock`, которому можно передать один слой или набор слоёв.<br>
@@ -262,6 +256,9 @@ public void InitializeLocker()
 Хэндл реализован как структура без аллокаций, поэтому работа с ним не создаёт лишнего мусора в памяти.
 
 # 3.Использование
+
+В репозитории есть демонстрационная сцена **SampleScene** и несколько скриптов, показывающих работу сервиса.
+
 ### Базовый пример
 ```cs
 private IInteractionLockerService _service;
